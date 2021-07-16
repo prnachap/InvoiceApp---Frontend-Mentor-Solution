@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.style.ts";
+import Button from "./components/button/Button";
+import { ThemeProvider } from "styled-components";
+import { lightTheme } from "./theme/light-theme";
+import { darkTheme } from "./theme/dark-theme";
+import { GlobalStyles } from "./App.style";
 
 function App() {
+  const [theme, setTheme] = useState(lightTheme);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider
+      theme={{
+        ...theme,
+        setTheme: () => {
+          setTheme((s) => (s.id === "light" ? darkTheme : lightTheme));
+        },
+      }}
+    >
+      <GlobalStyles />
+      <div className="App">
+        <Button type="secondary" className="btn--default">
+          Add
+        </Button>
+      </div>
+    </ThemeProvider>
   );
 }
 
