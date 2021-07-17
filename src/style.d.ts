@@ -76,6 +76,11 @@ declare module "styled-components" {
       duration: string;
     };
 
+    borderRadius: {
+      large: string;
+      small: string;
+    };
+
     setTheme?: () => void;
   }
 }

@@ -16,7 +16,7 @@ export const StyledButton = styled.button<StyleProps>`
   cursor: pointer;
   text-transform: capitalize;
   font-weight: 700;
-  border-radius: 2.4rem;
+  border-radius: ${({ theme }) => theme.borderRadius.large};
   transition: all 0.3s ease-in-out;
 
   ${(p) =>

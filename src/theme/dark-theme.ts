@@ -75,4 +75,8 @@ export const darkTheme: DefaultTheme = {
   transitionDuration: {
     duration: "0.3s",
   },
+  borderRadius: {
+    large: "2.4rem",
+    small: "0.4rem",
+  },
 };
