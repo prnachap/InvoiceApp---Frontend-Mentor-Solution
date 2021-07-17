@@ -6,6 +6,7 @@ import { lightTheme } from "./theme/light-theme";
 import { darkTheme } from "./theme/dark-theme";
 import { GlobalStyles } from "./App.style";
 import FilterStatus from "./components/filter/filter-status/FilterStatus";
+import Loader from "./components/loader/Loader";
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
@@ -24,6 +25,7 @@ function App() {
           Add
         </Button>
         <FilterStatus />
+        <Loader />
       </div>
     </ThemeProvider>
   );
