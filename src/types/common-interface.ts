@@ -2,12 +2,14 @@
 export interface IStatus {
   status: string;
 }
+
+// invoice reducer interface
 export interface InvoiceState {
   loading: boolean;
-  invoiceList: InvoiceItem[] | null;
+  allInvoices: InvoiceItem[] | null;
   error: string | null;
-  invoice: InvoiceItem | null;
-  filteredInvoices: InvoiceItem[] | null;
+  // invoice: InvoiceItem | null;
+  // filteredInvoices: InvoiceItem[] | null;
 }
 
 export interface InvoiceItem {

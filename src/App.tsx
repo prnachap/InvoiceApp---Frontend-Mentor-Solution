@@ -7,9 +7,12 @@ import { darkTheme } from "./theme/dark-theme";
 import { GlobalStyles } from "./App.style";
 import FilterStatus from "./components/filter/filter-status/FilterStatus";
 import Loader from "./components/loader/Loader";
+import { useSelector } from "./hooks/useTypedSelector";
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
+  const { allInvoices } = useSelector((state) => state.invoices);
+
   return (
     <ThemeProvider
       theme={{
@@ -21,6 +24,7 @@ function App() {
     >
       <GlobalStyles />
       <div className="App">
+        {console.log(allInvoices)}
         <Button type="secondary" className="btn--default">
           Add
         </Button>
