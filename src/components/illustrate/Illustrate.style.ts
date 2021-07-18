@@ -3,6 +3,7 @@ export const Wrapper = styled.div`
   max-width: 24.24.rem;
   width: 100%;
   margin-top: 14.1rem;
+  text-align: center;
 
   @media (max-width: 43.75em) {
     margin-top: 10.2rem;

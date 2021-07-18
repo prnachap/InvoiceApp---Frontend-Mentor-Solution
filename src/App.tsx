@@ -7,11 +7,12 @@ import { darkTheme } from "./theme/dark-theme";
 import { GlobalStyles } from "./App.style";
 import FilterStatus from "./components/filter/filter-status/FilterStatus";
 import Loader from "./components/loader/Loader";
-import { useSelector } from "./hooks/useTypedSelector";
+import { Route, Switch } from "react-router-dom";
+import { HomePage } from "./pages";
+import { Navbar } from "./components";
 
 function App() {
   const [theme, setTheme] = useState(lightTheme);
-  const { allInvoices } = useSelector((state) => state.invoices);
 
   return (
     <ThemeProvider
@@ -23,14 +24,10 @@ function App() {
       }}
     >
       <GlobalStyles />
-      <div className="App">
-        {console.log(allInvoices)}
-        <Button type="secondary" className="btn--default">
-          Add
-        </Button>
-        <FilterStatus />
-        <Loader />
-      </div>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+      </Switch>
     </ThemeProvider>
   );
 }
