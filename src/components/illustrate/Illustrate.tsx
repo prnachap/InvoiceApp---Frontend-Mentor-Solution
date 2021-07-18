@@ -1,6 +1,7 @@
 import React from "react";
 import { Wrapper, ImageContainer } from "./Illustrate.style";
 import Illustration from "../../assets/illustration-empty.svg";
+import { TextPrimary } from "../../styles/typography";
 
 const Illustate: React.FC = () => {
   return (
@@ -13,10 +14,10 @@ const Illustate: React.FC = () => {
         />
       </ImageContainer>
       <h2>There is nothing here</h2>
-      <p className="body-font-medium">
+      <TextPrimary>
         Create an invoice by clicking the <span>New Invoice</span> button and
         get started
-      </p>
+      </TextPrimary>
     </Wrapper>
   );
 };

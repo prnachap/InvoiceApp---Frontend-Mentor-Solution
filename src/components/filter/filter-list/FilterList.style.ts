@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TextPrimary } from "../../../styles/typography";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -39,5 +40,6 @@ export const Label = styled.label`
   margin-bottom: 1.6rem;
   font-weight: 700;
   text-transform: capitalize;
+  ${TextPrimary}
   color: ${({ theme }) => theme.colors.card.textColorPrimary};
 `;

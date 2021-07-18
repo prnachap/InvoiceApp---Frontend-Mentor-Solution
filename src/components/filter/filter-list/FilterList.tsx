@@ -21,7 +21,7 @@ const FilterOptions: React.FC<IOptions> = ({ option }) => {
           id={option}
           onClick={handleClick}
         />
-        <Label className="body-font-medium" htmlFor={option}>
+        <Label htmlFor={option}>
           <Span className={`${selected ? "fill" : null}`}>
             {selected && <IconCheck className="checkIcon" />}
           </Span>
