@@ -50,6 +50,9 @@ declare module "styled-components" {
         colorSecondary: string;
         colorTertairy: string;
       };
+      error: {
+        colorPrimary: string;
+      };
     };
     fontSize: {
       extraLarge: string;

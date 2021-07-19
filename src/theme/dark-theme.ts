@@ -50,6 +50,9 @@ export const darkTheme: DefaultTheme = {
       colorSecondary: "#FF8F00",
       colorTertairy: "#DFE3FA",
     },
+    error: {
+      colorPrimary: "#EC5757",
+    },
   },
   fontSize: {
     extraLarge: "3.2rem",

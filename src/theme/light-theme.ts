@@ -50,6 +50,9 @@ export const lightTheme: DefaultTheme = {
       colorSecondary: "#FF8F00",
       colorTertairy: "#373B53",
     },
+    error: {
+      colorPrimary: "#EC5757",
+    },
   },
   fontSize: {
     extraLarge: "3.2rem",
