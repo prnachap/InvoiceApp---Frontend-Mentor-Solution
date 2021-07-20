@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 interface StyleProps {
-  buttontype: string;
+  buttonStyle: string;
 }
 
 export const StyledButton = styled.button<StyleProps>`
@@ -20,7 +20,7 @@ export const StyledButton = styled.button<StyleProps>`
   transition: all 0.3s ease-in-out;
 
   ${(p) =>
-    p.buttontype === "primary"
+    p.buttonStyle === "primary"
       ? css`
           padding: 0.8rem 1.5rem 0.8rem 0.8rem;
         `

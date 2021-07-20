@@ -29,15 +29,15 @@ const StatusBar: React.FC<Props> = ({ status, id }) => {
         </StyledStatusDiv>
       </StatusFlexContainer>
       <ButtonFlexContainer>
-        <Button type="secondary" className="btn--form">
+        <Button buttonStyle="secondary" className="btn--form">
           Edit
         </Button>
-        <Button type="secondary" className="btn--danger">
+        <Button buttonStyle="secondary" className="btn--danger">
           Delete
         </Button>
         {status !== "paid" && (
           <Button
-            type="secondary"
+            buttonStyle="secondary"
             className="btn--default"
             handleClick={handleStatus}
           >

@@ -7,10 +7,11 @@ import {
   FormikValues,
 } from "formik";
 import React from "react";
-import { Header, Illustrate } from "../../components";
+import { Header, Illustrate, InvoiceForm } from "../../components";
 import CustomInput from "../../components/input/Input";
 import { useSelector } from "../../hooks/useTypedSelector";
 import * as Yup from "yup";
+import Modal from "../../components/modal/Modal";
 
 const HomePageContainer: React.FC = () => {
   const { allInvoices } = useSelector((state) => state.invoices);
@@ -24,6 +25,7 @@ const HomePageContainer: React.FC = () => {
     <>
       <Header />
       {!allInvoices && <Illustrate />}
+      <Modal />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -34,12 +36,7 @@ const HomePageContainer: React.FC = () => {
           }, 1000);
         }}
       >
-        {() => (
-          <Form>
-            <CustomInput type="input" name="name" label={"name"} />
-            <button type="submit">Submit</button>
-          </Form>
-        )}
+        {() => <InvoiceForm />}
       </Formik>
     </>
   );

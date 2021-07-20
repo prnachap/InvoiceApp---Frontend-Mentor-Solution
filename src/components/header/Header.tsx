@@ -13,7 +13,7 @@ const Header: React.FC = () => {
       </HeaderWrapper>
       <Wrapper>
         <FilterStatus classname="mg-right" />
-        <Button type="primary">New Invoice</Button>
+        <Button buttonStyle="primary">New Invoice</Button>
       </Wrapper>
     </Container>
   );

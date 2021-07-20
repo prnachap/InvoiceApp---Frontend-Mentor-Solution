@@ -6,27 +6,35 @@ import {
   SVGContainer,
 } from "./Button.style";
 import { ReactComponent as IconPlus } from "../../assets/icon-plus.svg";
+import { type } from "os";
 
 interface IButton {
-  type: string;
+  buttonStyle: string;
   className?: string;
+  type?: "submit" | "button" | "reset" | undefined;
   handleClick?: () => void;
 }
 
 const Button: React.FC<IButton> = ({
   children,
-  type,
+  buttonStyle,
   className,
+  type,
   handleClick,
 }) => {
   return (
-    <StyledButton buttontype={type} className={className} onClick={handleClick}>
-      {type === "primary" && (
+    <StyledButton
+      buttonStyle={buttonStyle}
+      className={className}
+      onClick={handleClick}
+      type={type ? type : "submit"}
+    >
+      {buttonStyle === "primary" && (
         <SVGContainer>
           <IconPlus role="img" />
         </SVGContainer>
       )}
-      {type === "primary" ? (
+      {buttonStyle === "primary" ? (
         <>
           <MobileText>{children?.toString().slice(0, 3)}</MobileText>
           <DesktopText>{children}</DesktopText>

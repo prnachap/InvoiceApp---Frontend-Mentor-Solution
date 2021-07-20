@@ -1,5 +1,6 @@
 import { Field } from "formik";
 import styled, { css } from "styled-components";
+import { StyledInput, StyledLable } from "../../styles/common-styles";
 
 interface IError {
   error: boolean;
@@ -23,14 +24,7 @@ export const ErrorText = styled.p`
 `;
 
 export const Label = styled.label<IError>`
-  display: block;
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-  font-size: ${({ theme }) => theme.fontSize.small};
-  line-height: ${({ theme }) => theme.lineHeight.small};
-  letter-spacing: ${({ theme }) => theme.letterSpacing.small};
-  transition: all 0.3s ease-in-out;
-
+  ${StyledLable}
   ${(p) =>
     p.error &&
     css`
@@ -39,42 +33,16 @@ export const Label = styled.label<IError>`
 `;
 
 export const Input = styled(Field)<IError>`
-  display: block;
-  width: 100%;
-  font-family: inherit;
-  font-size: ${({ theme }) => theme.fontSize.small};
-  line-height: ${({ theme }) => theme.lineHeight.small};
-  letter-spacing: ${({ theme }) => theme.letterSpacing.small};
-  font-weight: 700;
-  padding: 1.6rem 2rem;
-  color: ${(p) => p.theme.colors.headings.primaryColor};
-  border-radius: 4px;
-  background-color: ${(p) => p.theme.colors.form.backgroundColor};
-  transition: all 0.3s ease-in-out;
+  ${StyledInput}
 
   ${(p) =>
     p.error
       ? css`
   border: 1px solid
-      ${({ theme }) => theme.colors.error.colorPrimary}!important;
+      ${({ theme }) => theme.colors.error.colorPrimary};
   }
   `
       : css`
           border: 1px solid ${(p) => p.theme.colors.form.borderColor};
         `}
-
-  &:focus,
-  &:active {
-    outline: none;
-    border: 1px solid ${(p) => p.theme.colors.common.secondaryColor};
-  }
-
-  &::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-
-  &::-webkit-calendar-picker-indicator {
-    color: red;
-  }
 `;

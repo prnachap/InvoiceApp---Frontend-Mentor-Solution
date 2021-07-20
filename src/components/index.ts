@@ -3,3 +3,4 @@ export { default as FilterStatus } from "./filter/filter-status/FilterStatus";
 export { default as Header } from "./header/Header";
 export { default as Navbar } from "./navbar/Navbar";
 export { default as Illustrate } from "./illustrate/Illustrate";
+export { default as InvoiceForm } from "./invoice/invoice-form/InvoiceForm";
