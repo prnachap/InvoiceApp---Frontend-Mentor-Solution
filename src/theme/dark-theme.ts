@@ -24,7 +24,7 @@ export const darkTheme: DefaultTheme = {
     form: {
       borderColor: "#252945",
       backgroundColor: "#1E2139",
-      footerBackgroundColor: "#141625",
+      backgroundColorSecondary: "#141625",
     },
     button: {
       primaryDefault: "#252945",

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import "./App.style.ts";
-import Button from "./components/button/Button";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./theme/light-theme";
 import { darkTheme } from "./theme/dark-theme";
 import { GlobalStyles } from "./App.style";
-import FilterStatus from "./components/filter/filter-status/FilterStatus";
-import Loader from "./components/loader/Loader";
 import { Route, Switch } from "react-router-dom";
 import { HomePage } from "./pages";
 import { Navbar } from "./components";

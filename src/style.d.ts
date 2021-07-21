@@ -24,7 +24,7 @@ declare module "styled-components" {
       form: {
         borderColor: string;
         backgroundColor: string;
-        footerBackgroundColor: string;
+        backgroundColorSecondary: string;
       };
       button: {
         primaryDefault: string;

@@ -24,7 +24,7 @@ export const lightTheme: DefaultTheme = {
     form: {
       borderColor: "#DFE3FA",
       backgroundColor: "#ffffff",
-      footerBackgroundColor: "#ffffff",
+      backgroundColorSecondary: "#ffffff",
     },
     button: {
       primaryDefault: "#F9FAFE",

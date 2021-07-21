@@ -75,7 +75,7 @@ export const StyledInvoiceSpan = styled.span`
   color: ${({ theme }) => theme.colors.card.textColorCommon};
 `;
 
-export const StyledLable = css`
+export const StyledLabel = css`
   display: block;
   text-transform: capitalize;
   margin-bottom: 1rem;

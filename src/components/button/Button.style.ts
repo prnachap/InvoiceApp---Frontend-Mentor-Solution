@@ -7,6 +7,7 @@ interface StyleProps {
 export const StyledButton = styled.button<StyleProps>`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: inherit;
   font-size: ${({ theme }) => theme.fontSize.small};
   letter-spacing: ${({ theme }) => theme.letterSpacing.small};
@@ -43,6 +44,11 @@ export const StyledButton = styled.button<StyleProps>`
     &:hover {
       background: ${(p) => p.theme.colors.common.tertiaryColor};
     }
+  }
+
+  &.btn--fullwidth {
+    width: 100%;
+    text-align: center;
   }
 
   &.btn--form {

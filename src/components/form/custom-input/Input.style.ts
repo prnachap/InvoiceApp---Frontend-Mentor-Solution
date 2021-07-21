@@ -1,6 +1,5 @@
-import { Field } from "formik";
 import styled, { css } from "styled-components";
-import { StyledInput, StyledLable } from "../../styles/common-styles";
+import { StyledInput, StyledLabel } from "../../../styles/common-styles";
 
 interface IError {
   error: boolean;
@@ -24,7 +23,7 @@ export const ErrorText = styled.p`
 `;
 
 export const Label = styled.label<IError>`
-  ${StyledLable}
+  ${StyledLabel}
   ${(p) =>
     p.error &&
     css`
@@ -32,9 +31,8 @@ export const Label = styled.label<IError>`
     `}
 `;
 
-export const Input = styled(Field)<IError>`
+export const Input = styled.input<IError>`
   ${StyledInput}
-
   ${(p) =>
     p.error
       ? css`
@@ -45,4 +43,10 @@ export const Input = styled(Field)<IError>`
       : css`
           border: 1px solid ${(p) => p.theme.colors.form.borderColor};
         `}
+
+        &.faded {
+    border: none;
+  }
+  &::disabled {
+  }
 `;

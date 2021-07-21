@@ -8,7 +8,7 @@ import {
 import React, { forwardRef } from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { ReactComponent as IconCalander } from "../../assets/icon-calendar.svg";
+import { ReactComponent as IconCalander } from "../../../assets/icon-calendar.svg";
 
 import {
   InputGroup,
@@ -16,7 +16,6 @@ import {
   Button,
   LabelContainer,
   ErrorText,
-  CustomDiv,
 } from "./DatePicker.style";
 
 interface IInput {
@@ -26,7 +25,7 @@ interface IInput {
 
 type CustomInputProps = IInput & FieldHookConfig<Date>;
 
-const CustomInput: React.FC<CustomInputProps> = (props) => {
+const CustomDatePicker: React.FC<CustomInputProps> = (props) => {
   const { setFieldValue } = useFormikContext();
   const [field, meta] = useField<Date>(props);
   const { label } = props;
@@ -71,4 +70,4 @@ const CustomInput: React.FC<CustomInputProps> = (props) => {
   );
 };
 
-export default CustomInput;
+export default CustomDatePicker;

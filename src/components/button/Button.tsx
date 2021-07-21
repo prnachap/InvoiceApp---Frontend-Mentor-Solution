@@ -6,7 +6,6 @@ import {
   SVGContainer,
 } from "./Button.style";
 import { ReactComponent as IconPlus } from "../../assets/icon-plus.svg";
-import { type } from "os";
 
 interface IButton {
   buttonStyle: string;

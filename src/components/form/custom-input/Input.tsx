@@ -12,13 +12,15 @@ import {
 interface IInput {
   label?: string;
   type?: string;
+  disabled?: boolean;
+  className?: string;
 }
 
 type CustomInputProps = IInput & FieldHookConfig<string>;
 
 const CustomInput: React.FC<CustomInputProps> = (props) => {
   const [field, meta] = useField<string>(props);
-  const { label } = props;
+  const { label, disabled, className } = props;
   return (
     <InputGroup>
       <LabelContainer>
@@ -41,6 +43,8 @@ const CustomInput: React.FC<CustomInputProps> = (props) => {
         error={meta.error && meta.touched ? true : false}
         autoComplete="off"
         {...field}
+        className={className}
+        disabled={disabled}
       />
     </InputGroup>
   );

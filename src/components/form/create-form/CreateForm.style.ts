@@ -7,8 +7,9 @@ export const WrapperDiv = styled.div`
   top: 0;
   left: 0;
   height: 100%;
-  width: 80rem;
-  background: ${(p) => p.theme.colors.body.primaryColor};
+  max-width: 80rem;
+
+  background: ${(p) => p.theme.colors.form.backgroundColorSecondary};
 
   /* background-color: #fff; */
   padding: 5.6rem 3.3rem 3.2rem 15.9rem;
@@ -22,7 +23,6 @@ export const WrapperDiv = styled.div`
   }
 
   @media (max-width: 43.75em) {
-    max-width: 100%;
     border-radius: 0;
     padding-left: 2.4rem;
     padding-right: 2.4rem;
@@ -62,6 +62,10 @@ export const FormikForm = styled(Form)`
   overflow-y: scroll;
   height: 100%;
   padding-right: 1.6rem;
+
+  @media (max-width: 43.75em) {
+    padding-right: 1rem;
+  }
   &::-webkit-scrollbar {
     width: 8px;
   }
