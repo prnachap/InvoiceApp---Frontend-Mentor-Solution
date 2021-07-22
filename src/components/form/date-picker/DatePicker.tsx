@@ -27,7 +27,7 @@ type CustomInputProps = IInput & FieldHookConfig<Date>;
 
 const CustomDatePicker: React.FC<CustomInputProps> = (props) => {
   const { setFieldValue } = useFormikContext();
-  const [field, meta] = useField<Date>(props);
+  const [field, meta, { setValue } = helper] = useField<Date>(props);
   const { label } = props;
 
   const CustomInput = forwardRef<HTMLButtonElement>((props, ref) => (
@@ -62,7 +62,7 @@ const CustomDatePicker: React.FC<CustomInputProps> = (props) => {
 
       <ReactDatePicker
         selected={field.value}
-        onChange={(value) => setFieldValue(field.name, value)}
+        onChange={(value) => setValue(value)}
         customInput={<CustomInput />}
         dateFormat="d MMM yyyy"
       />
