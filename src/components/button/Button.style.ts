@@ -27,6 +27,9 @@ export const StyledButton = styled.button<StyleProps>`
         `
       : css`
           padding: 1.6rem 2.4rem;
+          @media (max-width: 43.75em) {
+            padding: 1rem;
+          }
         `}
 
   /* primary button */
@@ -56,6 +59,14 @@ export const StyledButton = styled.button<StyleProps>`
     color: ${(p) => p.theme.colors.text.primaryColor};
     &:hover {
       background: ${(p) => p.theme.colors.button.primaryDefaultHover};
+    }
+  }
+
+  &.btn--dark {
+    background: ${(p) => p.theme.colors.button.secondaryDefault};
+    color: ${(p) => p.theme.colors.text.primaryColor};
+    &:hover {
+      background: ${(p) => p.theme.colors.button.secondaryDefaultHover};
     }
   }
 

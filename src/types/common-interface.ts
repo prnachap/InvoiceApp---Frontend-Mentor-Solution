@@ -41,3 +41,9 @@ export interface InvoiceItem {
   }[];
   total: number;
 }
+
+// UI interface
+export interface UIState {
+  showForm: boolean;
+  showModal: boolean;
+}

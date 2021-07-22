@@ -63,3 +63,40 @@ export const loaderVariants = {
     },
   },
 };
+
+// form animation variants
+export const formVariants = {
+  hidden: {
+    opacity: 0,
+    x: "-100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 50,
+    },
+  },
+  exit: {
+    opacity: 0,
+    x: "-100vw",
+  },
+};
+
+// Modal variants
+export const modalVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 0.5,
+    transition: {
+      type: "tween",
+      duration: 0.3,
+    },
+  },
+  exit: {
+    opacity: 0,
+  },
+};

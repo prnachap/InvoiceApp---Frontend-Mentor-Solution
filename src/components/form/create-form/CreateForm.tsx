@@ -9,12 +9,31 @@ import FormFooter from "../form-footer/FormFooter";
 import { initialValue, validationSchema } from "../../../utils/form";
 import Items from "../invoice-items/items/Items";
 import Error from "../error/Error";
+import { formVariants } from "../../../styles/animation";
+import {
+  formAction,
+  modalAction,
+} from "../../../state/action-creators/ui-action-creators";
+import { useDispatch } from "react-redux";
 
 const CreateForm: React.FC = () => {
+  const dispatch = useDispatch();
   return (
-    <WrapperDiv>
-      <div to="/" className="back__link body-font-medium">
-        <LeftArrow /> Go back
+    <WrapperDiv
+      variants={formVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <div
+        className="back__link body-font-medium"
+        onClick={() => {
+          dispatch(formAction());
+          dispatch(modalAction());
+        }}
+      >
+        <LeftArrow />
+        Go back
       </div>
       <HeadingSecondary>New Invoice</HeadingSecondary>
       <Formik

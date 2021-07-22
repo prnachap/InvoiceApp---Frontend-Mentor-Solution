@@ -1,5 +1,6 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
-export const ModalDiv = styled.div`
+export const ModalDiv = styled(motion.div)`
   position: fixed;
   top: 0;
   bottom: 0;

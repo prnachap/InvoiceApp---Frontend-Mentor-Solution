@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Form } from "formik";
+import { motion } from "framer-motion";
 
 // Wrapper div
-export const WrapperDiv = styled.div`
+export const WrapperDiv = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;

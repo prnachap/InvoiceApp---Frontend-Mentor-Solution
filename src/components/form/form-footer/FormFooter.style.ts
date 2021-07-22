@@ -9,10 +9,16 @@ export const FormFooterWrapper = styled.div`
   padding: 3.1rem 3.31rem 3.1rem 15.9rem;
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
+  display: flex;
+  justify-content: space-between;
 
   @media (max-width: 43.75em) {
     border-radius: 0;
     padding: 2.1rem 2.4rem;
+    justify-content: center;
+    & > *:not(:last-child) {
+      margin-right: 8px;
+    }
   }
 
   .button__container {
