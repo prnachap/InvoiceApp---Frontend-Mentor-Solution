@@ -7,7 +7,7 @@ import {
   DropDown,
   List,
 } from "./CustomSelect.style";
-import { useFormikContext, useField } from "formik";
+import { useField } from "formik";
 import { arrowAnimate } from "../../../styles/animation";
 import { motion } from "framer-motion";
 
@@ -18,11 +18,11 @@ interface SInterface {
 }
 
 const Select: React.FC<SInterface> = ({ name }) => {
-  const [field] = useField("payment");
+  const [field, , helpers] = useField(name);
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const { setFieldValue } = useFormikContext();
+  // const { setFieldValue } = useFormikContext();
 
   const handleClickOutside = useCallback(
     (e: MouseEvent) => {
@@ -44,7 +44,7 @@ const Select: React.FC<SInterface> = ({ name }) => {
   }, [handleClickOutside]);
 
   const handleClick = (item: string) => {
-    setFieldValue("payment", item);
+    helpers.setValue(item);
     setOpen(false);
     setDropdown((prevState) => !prevState);
   };
