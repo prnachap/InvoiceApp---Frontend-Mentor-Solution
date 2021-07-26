@@ -1,68 +1,73 @@
 import * as Yup from "yup";
 
-interface InitialValueProps {
-  sender: {
-    address: string;
-    city: string;
-    postcode: string;
-    country: string;
-  };
+export interface InitialValueProps {
+  createdAt: Date;
+  description: string;
+  paymentTerms: string;
   clientName: string;
   clientEmail: string;
-  client: {
-    address: string;
+  senderAddress: {
+    street: string;
     city: string;
-    postcode: string;
+    postCode: string;
     country: string;
   };
-  date: Date;
-  payment: string;
-  projectDescription: string;
-  items: { name: string; qty: number; price: number; total: number }[] | [];
+  clientAddress: {
+    street: string;
+    city: string;
+    postCode: string;
+    country: string;
+  };
+
+  items:
+    | { name: string; quantity: number; price: number; total: number }[]
+    | [];
 }
 
 export const initialValue: InitialValueProps = {
-  sender: {
-    address: "",
-    city: "",
-    postcode: "",
-    country: "",
-  },
+  createdAt: new Date(),
+  description: "",
+  paymentTerms: "Net 1 Day",
   clientName: "",
   clientEmail: "",
-  client: {
-    address: "",
+  senderAddress: {
+    street: "",
     city: "",
-    postcode: "",
+    postCode: "",
     country: "",
   },
-  date: new Date(),
-  payment: "Net 1 Day",
-  projectDescription: "",
+
+  clientAddress: {
+    street: "",
+    city: "",
+    postCode: "",
+    country: "",
+  },
+
   items: [],
 };
 
 export const validationSchema = Yup.object({
-  sender: Yup.object().shape({
-    address: Yup.string().required("can't be empty"),
-    city: Yup.string().required("can't be empty"),
-    postcode: Yup.string().required("can't be empty"),
-    country: Yup.string().required("can't be empty"),
-  }),
-
+  createdAt: Yup.date().required("can't be empty"),
+  description: Yup.string().required("can't be empty"),
+  paymentTerms: Yup.string().required("can't be empty"),
   clientName: Yup.string().min(3).required("can't be empty"),
   clientEmail: Yup.string()
     .email("Invalid Email Format")
     .required("can't be empty"),
-  client: Yup.object().shape({
-    address: Yup.string().required("can't be empty"),
+  senderAddress: Yup.object().shape({
+    street: Yup.string().required("can't be empty"),
     city: Yup.string().required("can't be empty"),
-    postcode: Yup.string().required("can't be empty"),
+    postCode: Yup.string().required("can't be empty"),
     country: Yup.string().required("can't be empty"),
   }),
-  projectDescription: Yup.string().required("can't be empty"),
-  date: Yup.date().required("can't be empty"),
-  payment: Yup.string().required("can't be empty"),
+  clientAddress: Yup.object().shape({
+    street: Yup.string().required("can't be empty"),
+    city: Yup.string().required("can't be empty"),
+    postCode: Yup.string().required("can't be empty"),
+    country: Yup.string().required("can't be empty"),
+  }),
+
   items: Yup.array()
     .of(
       Yup.object().shape({

@@ -17,7 +17,7 @@ export interface InvoiceItem {
   createdAt: string;
   paymentDue: string;
   description: string;
-  paymentTerms: number;
+  paymentTerms: string;
   clientName: string;
   clientEmail: string;
   status: string;

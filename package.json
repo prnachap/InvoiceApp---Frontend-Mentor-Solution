@@ -16,6 +16,8 @@
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "json-server": "^0.16.3",
+    "randomatic": "^3.1.1",
+    "randomize": "^0.0.4",
     "react": "^17.0.2",
     "react-datepicker": "^4.1.1",
     "react-dom": "^17.0.2",
@@ -57,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@types/randomatic": "^3.1.2",
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.11"
   }

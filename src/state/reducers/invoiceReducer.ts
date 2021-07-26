@@ -23,6 +23,15 @@ export default (state = INITIALSTATE, action: Action): InvoiceState => {
         allInvoices: null,
         error: action.payload,
       };
+    case ActionType.CREATE_INVOICE_DRAFT:
+      return {
+        ...state,
+        loading: false,
+        allInvoices: state.allInvoices && [
+          ...state.allInvoices,
+          { ...action.payload, status: "draft" },
+        ],
+      };
     default:
       return state;
   }

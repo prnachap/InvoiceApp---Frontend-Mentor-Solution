@@ -46,7 +46,7 @@ const CreateForm: React.FC = () => {
             <Form className="scroll__container">
               <FieldSet />
               <Items name="items" />
-              <FormFooter />
+              <FormFooter data={props.values} />
               {props.submitCount > 0 && props.errors && <Error {...props} />}
             </Form>
           </>

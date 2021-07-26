@@ -13,7 +13,14 @@ interface SearchRepositoriesError {
   type: ActionType.SEARCH_INVOICES_ERROR;
   payload: string;
 }
+
+interface CreateInvoiceAndSaveAsDraft {
+  type: ActionType.CREATE_INVOICE_DRAFT;
+  payload: InvoiceItem;
+}
+
 export type Action =
   | SearchInvoices
   | SearchRepositoriesSuccess
-  | SearchRepositoriesError;
+  | SearchRepositoriesError
+  | CreateInvoiceAndSaveAsDraft;

@@ -8,30 +8,38 @@ const Fields = () => {
     <div>
       <StyledFieldSet>
         <FormLegend>Bill From</FormLegend>
-        <CustomInput name="sender.address" label="Street address" />
+        <CustomInput name="senderAddress.street" label="Street address" />
         <GridContainer className="input__container">
-          <CustomInput name="sender.city" label="city" />
-          <CustomInput name="sender.postcode" label="post code" type="number" />
-          <CustomInput name="sender.country" label="country" />
+          <CustomInput name="senderAddress.city" label="city" />
+          <CustomInput
+            name="senderAddress.postCode"
+            label="post code"
+            type="number"
+          />
+          <CustomInput name="senderAddress.country" label="country" />
         </GridContainer>
       </StyledFieldSet>
       <StyledFieldSet>
         <FormLegend>Bill To</FormLegend>
         <CustomInput name="clientName" label="Client's Name" />
         <CustomInput name="clientEmail" label="Client's Email" type="email" />
-        <CustomInput name="client.address" label="Street address" />
+        <CustomInput name="clientAddress.street" label="Street address" />
         <GridContainer className="input__container">
-          <CustomInput name="client.city" label="city" />
-          <CustomInput name="client.postcode" label="post code" type="number" />
-          <CustomInput name="client.country" label="country" />
+          <CustomInput name="clientAddress.city" label="city" />
+          <CustomInput
+            name="clientAddress.postCode"
+            label="post code"
+            type="number"
+          />
+          <CustomInput name="clientAddress.country" label="country" />
         </GridContainer>
       </StyledFieldSet>
       <StyledFieldSet>
         <GridContainer className="input__container date__container">
-          <CustomDatePicker name="date" label="Invoice Data" />
-          <CustomSelect name="payment" />
+          <CustomDatePicker name="createdAt" label="Invoice Data" />
+          <CustomSelect name="paymentTerms" />
         </GridContainer>
-        <CustomInput name="projectDescription" label="Project Description" />
+        <CustomInput name="description" label="Project Description" />
       </StyledFieldSet>
     </div>
   );
