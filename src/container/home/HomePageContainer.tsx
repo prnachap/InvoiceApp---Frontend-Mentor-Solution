@@ -11,7 +11,7 @@ import { SearchInvoices } from "../../state/action-creators/invoice-action-creat
 const HomePageContainer: React.FC = () => {
   const dispatch = useDispatch();
   const {
-    invoices: { allInvoices, loading },
+    invoices: { allInvoices },
     ui: { showForm, showModal },
   } = useSelector((state) => state);
 
@@ -26,7 +26,6 @@ const HomePageContainer: React.FC = () => {
   return (
     <>
       <Header />
-      {console.log(allInvoices, loading)}
       {!allInvoices && <Illustrate />}
       {allInvoices && <InvoiceItemList />}
       <AnimatePresence>{showModal && <Modal />}</AnimatePresence>

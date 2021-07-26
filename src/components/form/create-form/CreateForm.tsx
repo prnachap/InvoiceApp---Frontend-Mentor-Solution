@@ -15,6 +15,8 @@ import {
   modalAction,
 } from "../../../state/action-creators/ui-action-creators";
 import { useDispatch } from "react-redux";
+import { saveAndSendInvoice } from "../../../state/action-creators/invoice-action-creator";
+import { addProperties } from "../../../utils/addProperties";
 
 const CreateForm: React.FC = () => {
   const dispatch = useDispatch();
@@ -38,7 +40,11 @@ const CreateForm: React.FC = () => {
       <HeadingSecondary>New Invoice</HeadingSecondary>
       <Formik
         initialValues={initialValue}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values) => {
+          dispatch(saveAndSendInvoice({ ...addProperties("pending", values) }));
+          dispatch(formAction());
+          dispatch(modalAction());
+        }}
         validationSchema={validationSchema}
       >
         {(props) => (
@@ -47,7 +53,9 @@ const CreateForm: React.FC = () => {
               <FieldSet />
               <Items name="items" />
               <FormFooter data={props.values} />
-              {props.submitCount > 0 && props.errors && <Error {...props} />}
+              {props.submitCount > 0 && Object.keys(props.errors).length > 0 ? (
+                <Error {...props} />
+              ) : null}
             </Form>
           </>
         )}

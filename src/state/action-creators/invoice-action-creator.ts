@@ -22,3 +22,10 @@ export const saveInvoiceAsDraft =
       dispatch({ type: ActionType.CREATE_INVOICE_DRAFT, payload: data });
     } catch (error) {}
   };
+
+export const saveAndSendInvoice =
+  (data: InvoiceItem) => async (dispatch: Dispatch<Action>) => {
+    try {
+      dispatch({ type: ActionType.CREATE_INVOICE_SEND, payload: data });
+    } catch (error) {}
+  };

@@ -39,7 +39,7 @@ export interface InvoiceItem {
     price: number;
     total: number;
   }[];
-  total: number;
+  total: string | number;
 }
 
 // UI interface

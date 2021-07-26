@@ -24,12 +24,13 @@ export default (state = INITIALSTATE, action: Action): InvoiceState => {
         error: action.payload,
       };
     case ActionType.CREATE_INVOICE_DRAFT:
+    case ActionType.CREATE_INVOICE_SEND:
       return {
         ...state,
         loading: false,
         allInvoices: state.allInvoices && [
           ...state.allInvoices,
-          { ...action.payload, status: "draft" },
+          { ...action.payload },
         ],
       };
     default:

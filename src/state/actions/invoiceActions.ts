@@ -19,8 +19,14 @@ interface CreateInvoiceAndSaveAsDraft {
   payload: InvoiceItem;
 }
 
+interface CreateAndSendInvoice {
+  type: ActionType.CREATE_INVOICE_SEND;
+  payload: InvoiceItem;
+}
+
 export type Action =
   | SearchInvoices
   | SearchRepositoriesSuccess
   | SearchRepositoriesError
-  | CreateInvoiceAndSaveAsDraft;
+  | CreateInvoiceAndSaveAsDraft
+  | CreateAndSendInvoice;
