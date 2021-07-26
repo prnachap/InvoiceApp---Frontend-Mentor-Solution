@@ -34,12 +34,12 @@ export const Input = styled.input`
   cursor: pointer;
 `;
 
-export const Label = styled.label`
+export const Label = styled(TextPrimary)`
   display: flex;
   align-items: center;
   margin-bottom: 1.6rem;
   font-weight: 700;
   text-transform: capitalize;
-  ${TextPrimary}
+
   color: ${({ theme }) => theme.colors.card.textColorPrimary};
 `;

@@ -67,8 +67,7 @@ export const StyledLink = styled(Link)`
 `;
 
 // Invoice Styled components
-export const StyledInvoiceID = styled.h3`
-  ${HeadingTertiary}
+export const StyledInvoiceID = styled(HeadingTertiary)`
   color: ${({ theme }) => theme.colors.card.textColorPrimary};
 `;
 export const StyledInvoiceSpan = styled.span`

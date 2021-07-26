@@ -62,7 +62,7 @@ export const lightTheme: DefaultTheme = {
     extraSmall: "1.1rem",
   },
   letterSpacing: {
-    extraLarge: "-1px",
+    extraLarge: "-0.1px",
     large: "-0.63px",
     medium: "-0.8px",
     small: "-0.25px",

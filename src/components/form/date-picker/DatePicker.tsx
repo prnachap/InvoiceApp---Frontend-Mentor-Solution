@@ -1,10 +1,5 @@
 // @ts-nocheck
-import {
-  ErrorMessage,
-  useField,
-  FieldHookConfig,
-  useFormikContext,
-} from "formik";
+import { ErrorMessage, useField, FieldHookConfig } from "formik";
 import React, { forwardRef } from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -26,7 +21,6 @@ interface IInput {
 type CustomInputProps = IInput & FieldHookConfig<Date>;
 
 const CustomDatePicker: React.FC<CustomInputProps> = (props) => {
-  const { setFieldValue } = useFormikContext();
   const [field, meta, { setValue } = helper] = useField<Date>(props);
   const { label } = props;
 
