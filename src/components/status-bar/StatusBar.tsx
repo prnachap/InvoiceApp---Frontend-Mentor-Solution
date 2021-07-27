@@ -1,5 +1,6 @@
 import React from "react";
 import { StatusCirle, StyledStatusDiv } from "../../styles/common-styles";
+import { TextPrimary } from "../../styles/typography";
 import Button from "../button/Button";
 // import useActions from "../../hooks/useActions";
 import {
@@ -23,7 +24,7 @@ const StatusBar: React.FC<Props> = ({ status, id }) => {
   return (
     <StatusWrapperDiv>
       <StatusFlexContainer>
-        <p className="body-font-medium">Status</p>
+        <TextPrimary>Status</TextPrimary>
         <StyledStatusDiv className="status" status={status}>
           <StatusCirle status={status} /> {status}
         </StyledStatusDiv>

@@ -6,6 +6,7 @@ import { darkTheme } from "./theme/dark-theme";
 import { GlobalStyles } from "./App.style";
 import { Route, Switch } from "react-router-dom";
 import { HomePage } from "./pages";
+import DetailPage from "./pages/detail/DetailPage";
 import { Navbar } from "./components";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/:id" component={DetailPage} />
       </Switch>
     </ThemeProvider>
   );

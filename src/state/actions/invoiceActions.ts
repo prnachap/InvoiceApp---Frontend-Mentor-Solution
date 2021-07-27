@@ -24,9 +24,15 @@ interface CreateAndSendInvoice {
   payload: InvoiceItem;
 }
 
+interface GetInvoiceByID {
+  type: ActionType.GET_INVOICE_BY_ID;
+  payload: InvoiceItem;
+}
+
 export type Action =
   | SearchInvoices
   | SearchRepositoriesSuccess
   | SearchRepositoriesError
   | CreateInvoiceAndSaveAsDraft
-  | CreateAndSendInvoice;
+  | CreateAndSendInvoice
+  | GetInvoiceByID;

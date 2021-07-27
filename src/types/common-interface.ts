@@ -8,6 +8,7 @@ export interface InvoiceState {
   loading: boolean;
   allInvoices: InvoiceItem[] | null;
   error: string | null;
+  currentInvoice: InvoiceItem | null;
   // invoice: InvoiceItem | null;
   // filteredInvoices: InvoiceItem[] | null;
 }

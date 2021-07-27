@@ -18,6 +18,10 @@ export const GlobalStyles = createGlobalStyle`
     transition: background 0.3s ease-in-out;
   }
 
+  .mg-top-xs{
+    margin-top:0.8rem;
+  }
+
   /* anchor element */
   a{
     text-decoration:none;

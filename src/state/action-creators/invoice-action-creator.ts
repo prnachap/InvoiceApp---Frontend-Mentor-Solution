@@ -29,3 +29,17 @@ export const saveAndSendInvoice =
       dispatch({ type: ActionType.CREATE_INVOICE_SEND, payload: data });
     } catch (error) {}
   };
+
+export const getInvoiceByID =
+  (id: string) => async (dispatch: Dispatch<Action>) => {
+    dispatch({ type: ActionType.SEARCH_INVOICES });
+    try {
+      const newData = data.filter((item) => item.id === id);
+      dispatch({ type: ActionType.GET_INVOICE_BY_ID, payload: newData[0] });
+    } catch (error) {
+      dispatch({
+        type: ActionType.SEARCH_INVOICES_ERROR,
+        payload: "something went wrong",
+      });
+    }
+  };
